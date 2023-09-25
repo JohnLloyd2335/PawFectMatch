@@ -24,9 +24,11 @@
         @endif
       </div>
 
-
+      
 
     </div>
 
 </div>
 <!-- End Page Content -->
+
+@endsection

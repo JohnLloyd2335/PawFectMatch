@@ -65,7 +65,7 @@ Route::group(['middleware' => 'auth'], function(){
             'destroy' => 'admin.pet.destroy',
         ]);
 
-       Route::resource('pet/medical_history',MedicalHistoryController::class)
+       Route::resource('medical_history',MedicalHistoryController::class)
        ->only(['index','show','create','store'])
        ->names([
             'index' => 'admin.pet.medical_history.index',
@@ -73,7 +73,7 @@ Route::group(['middleware' => 'auth'], function(){
             'show' => 'admin.pet.medical_history.show',
             'store' => 'admin.pet.medical_history.store',
        ]);
-
+       
         
        
 
