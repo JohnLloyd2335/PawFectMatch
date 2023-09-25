@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Adopters;
+namespace App\Livewire\Adopter;
 
 use App\Models\Breed;
 use App\Models\Pet;
@@ -38,7 +38,7 @@ class Home extends Component
         }
         $pets = $petsQuery->paginate(8);
 
-        return view('livewire.adopters.home',[
+        return view('livewire.adopter.home',[
             'pets' =>  $pets,
             'species' => $species,
             'breeds' => $breeds

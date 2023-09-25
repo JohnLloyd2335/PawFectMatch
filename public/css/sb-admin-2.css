@@ -11302,3 +11302,52 @@ body.sidebar-toggled footer.sticky-footer {
 {
   border: 8px solid rgb(255, 127, 80);
 }
+.btn-outline-base{
+  border: 2px solid #FF9966;
+  font-size: 1rem;
+  color: #FF9966;
+  font-weight: 900;
+}
+
+.btn-outline-base:hover{
+ background-color: #FF9966;
+ color: #fff;
+}
+
+.text-color-base{
+  color: #FF9966;
+  font-weight: 900;
+}
+
+.bg-base{
+  background-color: #FF9966;
+  color: #fff;
+}
+
+/* Style the active page link */
+.pagination .page-item.active .page-link {
+  background-color: #FF9966; /* Background color for active page */
+  border-color: #FF9966; /* Border color for active page */
+  color: #fff; /* Text color for active page */
+  font-size: 18px; /* Increase font size for active page */
+  font-weight: bold; /* Make font bold for active page */
+}
+
+/* Reset styles for other page links */
+.pagination .page-item .page-link {
+  background-color: transparent; /* Remove background color for non-active pages */
+  border-color: #dee2e6; /* Default border color for non-active pages */
+  color: #FF9966; /* Text color for non-active pages */
+  font-size: 16px; /* Increase font size for non-active pages */
+  font-weight: normal; /* Make font normal weight for non-active pages */
+}
+
+/* Style the disabled page link (optional) */
+.pagination .page-item.disabled .page-link {
+  background-color: transparent; /* Remove background color for disabled pages */
+  border-color: #dee2e6; /* Default border color for disabled pages */
+  color: #6c757d; /* Text color for disabled pages */
+  font-size: 16px; /* Increase font size for disabled pages */
+  font-weight: normal; /* Make font normal weight for disabled pages */
+}
+

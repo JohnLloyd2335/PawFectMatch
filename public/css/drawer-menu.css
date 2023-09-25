@@ -1,0 +1,23 @@
+.drawerMenu {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #fff; /* Black*/
+  border: 2px solid #e0e0e0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 5px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the drawerMenu */
+}
+
+
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the drawerMenu (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .drawerMenu {padding-top: 15px;}
+  .drawerMenu a {font-size: 18px;}
+}

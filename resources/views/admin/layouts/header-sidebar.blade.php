@@ -68,6 +68,11 @@
                     'admin.species.edit',
                     'admin.species.update',
                     'admin.species.destroy',
+                    'admin.breed.index',
+                    'admin.breed.create',
+                    'admin.breed.store',
+                    'admin.breed.edit',
+                    'admin.breed.update',
                 ])
                     ? 'active'
                     : '' }}">
@@ -85,7 +90,17 @@
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ in_array($current_route, [
+                'admin.pet.index',
+                'admin.pet.show',
+                'admin.pet.create',
+                'admin.pet.store',
+                'admin.pet.edit',
+                'admin.pet.update',
+                'admin.pet.destroy',
+            ])
+                ? 'active'
+                : '' }}">
                 <a class="nav-link" href="{{ route('admin.pet.index') }}">
                     <i class="fas fa-paw"></i>
                     <span>Pet</span></a>
@@ -215,7 +230,7 @@
     </form>
 
     <!-- Bootstrap core JavaScript-->
-    {{-- <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script> --}}
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
    
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
