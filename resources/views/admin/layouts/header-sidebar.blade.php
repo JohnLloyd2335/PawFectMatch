@@ -103,7 +103,23 @@
                 : '' }}">
                 <a class="nav-link" href="{{ route('admin.pet.index') }}">
                     <i class="fas fa-paw"></i>
-                    <span>Pet</span></a>
+                    <span>Pet</span>
+                </a>
+            </li>
+
+            <li class="nav-item {{ 
+                in_array($current_route,[
+                    'admin.pet.medical_history.index',
+                    // 'admin.pet.medical_history.show',
+                    // 'admin.pet.medical_history.create',
+                    // 'admin.pet.medical_history.store',
+                ])
+                ? 'active'
+                : '' }}">
+                <a class="nav-link" href="{{ route('admin.pet.medical_history.index') }}"> 
+                    <i class="fas fa-notes-medical"></i>
+                    <span>Medical History</span>
+                </a>
             </li>
 
             <li class="nav-item">

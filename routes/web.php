@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SpeciesController as AdminSpeciesController;
 use App\Http\Controllers\Admin\BreedController as AdminBreedController;
+use App\Http\Controllers\Admin\MedicalHistoryController;
 use App\Http\Controllers\Admin\PetController;
 use Illuminate\Support\Facades\Route;
 
@@ -64,7 +65,23 @@ Route::group(['middleware' => 'auth'], function(){
             'destroy' => 'admin.pet.destroy',
         ]);
 
+       Route::resource('pet/medical_history',MedicalHistoryController::class)
+       ->only(['index','show','create','store'])
+       ->names([
+            'index' => 'admin.pet.medical_history.index',
+            'create' => 'admin.pet.medical_history.create',
+            'show' => 'admin.pet.medical_history.show',
+            'store' => 'admin.pet.medical_history.store',
+       ]);
+
+        
+       
+
         
     });
 
+    
+
 });
+
+

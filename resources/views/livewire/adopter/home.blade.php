@@ -69,7 +69,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="col px-4 mt-2 d-flex flex-column gap-2">
+            <div class="col px-4 mt-4 d-flex flex-column gap-2">
                 <button wire:click="filterPets" class="btn btn-outline-base w-100">Apply</button>
                 <button wire:click="cancelFilter" class="btn btn-outline-base w-100">Cancel</button>
             </div>
