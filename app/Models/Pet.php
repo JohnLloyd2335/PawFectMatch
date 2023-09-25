@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -12,12 +13,12 @@ class Pet extends Model
     use HasFactory;
 
     protected $fillable = [
-        'species_id', 'breed_id', 'name', 'dob', 'gender', 'height', 'weight'
+        'species_id', 'breed_id', 'name', 'dob', 'gender', 'height', 'weight','image'
     ];
 
     public function specie() : BelongsTo 
     {
-        return $this->belongsTo(Species::class);
+        return $this->belongsTo(Species::class,'species_id');
     }
 
     public function breed() : BelongsTo 
@@ -38,5 +39,9 @@ class Pet extends Model
     public function bookmarks() : HasMany 
     {
         return $this->hasMany(Bookmark::class);
+    }
+
+    public function age(){
+        return Carbon::parse($this->attributes['dob'])->age;
     }
 }

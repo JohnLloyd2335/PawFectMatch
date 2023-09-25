@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SpeciesController as AdminSpeciesController;
 use App\Http\Controllers\Admin\BreedController as AdminBreedController;
+use App\Http\Controllers\Admin\PetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,6 +52,19 @@ Route::group(['middleware' => 'auth'], function(){
             'edit' => 'admin.breed.edit',
             'update' => 'admin.breed.update',
         ]);
+
+        Route::resource('pet', PetController::class)
+        ->names([
+            'index' => 'admin.pet.index',
+            'create' => 'admin.pet.create',
+            'show' => 'admin.pet.show',
+            'store' => 'admin.pet.store',
+            'edit' => 'admin.pet.edit',
+            'update' => 'admin.pet.update',
+            'destroy' => 'admin.pet.destroy',
+        ]);
+
+        
     });
 
 });
