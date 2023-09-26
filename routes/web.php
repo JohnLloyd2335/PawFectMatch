@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\SpeciesController as AdminSpeciesController;
 use App\Http\Controllers\Admin\BreedController as AdminBreedController;
 use App\Http\Controllers\Admin\MedicalHistoryController;
 use App\Http\Controllers\Admin\PetController;
+use App\Http\Controllers\Adopters\PetController as AdoptersPetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,7 @@ Route::group(['middleware' => 'auth'], function(){
     
     Route::group(['middleware' => 'adopter'], function(){
         Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('/home/pet/{pet}',[AdoptersPetController::class,'show'])->name('adopters.pet.show');
     });
 
     Route::group(['prefix' => 'admin','middleware' => 'admin'], function(){

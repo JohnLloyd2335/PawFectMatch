@@ -14,7 +14,7 @@ class PetMedicalHistoryTable extends Component
     public function render()
     {
         $petId = $this->pet->id;
-        $medical_histories = MedicalHistory::where('pet_id',$petId)->paginate(1);
+        $medical_histories = MedicalHistory::where('pet_id',$petId)->paginate(5);
         return view('livewire.admin.pet-medical-history-table',compact('medical_histories'));
     }
 }

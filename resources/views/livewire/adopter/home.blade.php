@@ -6,7 +6,7 @@
                 <input type="text" wire:model.live="search" class="form-control" placeholder="Search Pet...">
             </div>
             <div class="col-md-1 col-lg-1 col-sm-1">
-                <button class="btn btn-outline-base gap-1" onclick="openDrawerMenu()"><i class="fas fa-filter"></i><span
+                <button class="btn btn-outline-base gap-1" onclick="openDrawerMenu()"><i class="fas fa-filter mr-1"></i><span
                         class="d-sm-none d-md-none d-lg-inline">Filter</span></button>
             </div>
         </div>
@@ -17,7 +17,7 @@
 
                     <div class="row d-flex align-items-center justify-content-arround flex-wrap">
                         @forelse ($pets as $pet)
-                            <a class="col-lg-3 col-md-4 col-sm-6 mt-1 text-decoration-none" href="#">
+                            <a class="col-lg-3 col-md-4 col-sm-6 mt-1 text-decoration-none" href="{{ route('adopters.pet.show',$pet) }}">
                                 <div class="card border-top-rounded">
                                     <img src="{{ asset('storage/'.$pet->image) }}" alt="" class="card-img-top" height="600">
                                     <div class="card-body bg-base">
