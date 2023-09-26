@@ -66,11 +66,10 @@ Route::group(['middleware' => 'auth'], function(){
         ]);
 
        Route::resource('medical_history',MedicalHistoryController::class)
-       ->only(['index','show','create','store'])
+       ->only(['index','create','store'])
        ->names([
             'index' => 'admin.pet.medical_history.index',
             'create' => 'admin.pet.medical_history.create',
-            'show' => 'admin.pet.medical_history.show',
             'store' => 'admin.pet.medical_history.store',
        ]);
        

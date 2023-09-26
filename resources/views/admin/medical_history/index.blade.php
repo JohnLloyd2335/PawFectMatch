@@ -9,7 +9,7 @@
         <h1 class="h3 mb-0 text-gray-900">Pet Medical History</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="">Medical History</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('admin.pet.medical_history.index') }}">Medical History</a></li>
             </ol>
         </nav>
     </div>
@@ -24,7 +24,7 @@
         @endif
       </div>
 
-      
+      @livewire('admin.medicalhistory-table')
 
     </div>
 

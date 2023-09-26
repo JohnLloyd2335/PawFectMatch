@@ -107,7 +107,13 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ in_array($current_route, [
+                    'admin.pet.medical_history.index',
+                    'admin.pet.medical_history.create',
+                    'admin.pet.medical_history.store',
+                ])
+                ? 'active'
+                : '' }}">
                 <a class="nav-link" href="{{ route('admin.pet.medical_history.index') }}"> 
                     <i class="fas fa-notes-medical"></i>
                     <span>Medical History</span>

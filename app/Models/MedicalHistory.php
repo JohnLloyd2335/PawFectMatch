@@ -14,7 +14,7 @@ class MedicalHistory extends Model
         'pet_id', 'diagnosis', 'treatment', 'checkup_date'
     ];
 
-    public function medical_history() : BelongsTo
+    public function pet() : BelongsTo
     {
         return $this->belongsTo(Pet::class);
     }
