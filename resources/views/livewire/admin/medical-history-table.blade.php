@@ -60,7 +60,7 @@
         </div>
       </div>
 
-      <div class="row d-flex aalign-items-center justify-content-end">
+      <div class="row d-flex align-items-center justify-content-end">
        {{ $medical_histories->links(); }}
       </div>
       @livewireScripts
