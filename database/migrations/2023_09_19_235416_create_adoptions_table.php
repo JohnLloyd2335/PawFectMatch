@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('pet_id')->constrained('pets')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('adopter_id')->constrained('adopters')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('reason');
-            $table->enum('status',['Pending','Approved','Rejected']);
+            $table->enum('status',['Pending','Approved','Rejected','Withdrawn'])->default('Pending');
             $table->date('application_date')->nullable();
             $table->timestamps();
         });

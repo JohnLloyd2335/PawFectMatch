@@ -121,7 +121,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('admin.adoptions.index') }}">
                     <i class="fas fa-hands"></i>
                     <span>Adoption</span></a>
             </li>

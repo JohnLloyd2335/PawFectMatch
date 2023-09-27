@@ -18,7 +18,7 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
+    
     <link rel="stylesheet" href="{{ asset('css/sb-admin-2.css') }}">
 </head>
 <body>

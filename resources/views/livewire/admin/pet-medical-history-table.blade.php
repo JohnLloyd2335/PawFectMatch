@@ -16,8 +16,8 @@
                   @forelse ($medical_histories as $history)
                       <tr wire:key="{{ $history->id }}">
                           <td>{{ $history->id }}</td>
-                          <td>{{ $history->treatment }}</td>
                           <td>{{ $history->diagnosis }}</td>
+                          <td>{{ $history->treatment}}</td>
                           <td>{{ date('M d, Y', strtotime($history->checkup_date)) }}</td>
                       </tr>
                   @empty

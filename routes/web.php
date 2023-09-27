@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\AdoptionController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SpeciesController as AdminSpeciesController;
 use App\Http\Controllers\Admin\BreedController as AdminBreedController;
 use App\Http\Controllers\Admin\MedicalHistoryController;
 use App\Http\Controllers\Admin\PetController;
+use App\Http\Controllers\Adopters\AdoptionsController;
 use App\Http\Controllers\Adopters\PetController as AdoptersPetController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,8 +31,14 @@ Route::group(['middleware' => 'auth'], function(){
 
     
     Route::group(['middleware' => 'adopter'], function(){
+
         Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
         Route::get('/home/pet/{pet}',[AdoptersPetController::class,'show'])->name('adopters.pet.show');
+
+        Route::get('pet/{pet}/request_adoption', [AdoptionsController::class,'create'])->name('adopters.adoptions.create');
+        Route::post('pet/{pet}/request_adoption/store',[AdoptionsController::class,'store'])->name('adopters.adoptions.store');
+
+       
     });
 
     Route::group(['prefix' => 'admin','middleware' => 'admin'], function(){
@@ -75,8 +83,8 @@ Route::group(['middleware' => 'auth'], function(){
             'store' => 'admin.pet.medical_history.store',
        ]);
        
-        
-       
+       Route::get('adoptions',[AdoptionController::class,'index'])->name('admin.adoptions.index');
+       Route::put('adoptions/{adoption}/update', [AdoptionController::class,'update'])->name('admin.adoptions.update');
 
         
     });

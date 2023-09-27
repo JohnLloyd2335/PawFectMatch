@@ -44,9 +44,9 @@
                           <td>{{ $history->id }}</td>
                           <td>{{ $history->pet->name }}</td>
                           <td>{{ $history->pet->specie->name }}</td>
-                          <td>{{ $history->pet->breed->name }}</td>
-                          <td>{{ $history->treatment }}</td>
+                          <td>{{ $history->pet->breed->name }}</td> 
                           <td>{{ $history->diagnosis }}</td>
+                          <td>{{ $history->treatment }}</td>
                           <td>{{ date('M d, Y', strtotime($history->checkup_date)) }}</td>
                       </tr>
                   @empty
