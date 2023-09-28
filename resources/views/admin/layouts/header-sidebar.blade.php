@@ -120,23 +120,15 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ in_array($current_route, [
+                'admin.adoptions.index',
+            ])
+            ? 'active'
+            : '' }}">
                 <a class="nav-link" href="{{ route('admin.adoptions.index') }}">
                     <i class="fas fa-hands"></i>
                     <span>Adoption</span></a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-users"></i>
-                    <span>Users</span></a>
-            </li>
-
-
-
-
-
-
 
         </ul>
         <!-- End of Sidebar -->

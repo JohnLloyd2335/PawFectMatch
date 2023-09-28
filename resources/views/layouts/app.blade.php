@@ -39,13 +39,21 @@
                     @auth
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto">
+                        @if (auth()->user()->is_admin)
+                        <li class="nav-item">
+                            <a href="{{ route('admin.dashboard') }}" class="nav-link">Dashboard</a>
+                        </li>
+                        @else
+                        
                             <li class="nav-item">
                                 <a href="{{ route('home') }}" class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('adopters.adoptions.index') }}" class="nav-link">Adoptions</a>
                             </li>
-                        </ul>
+                       
+                        @endif
+                    </ul>
                     @endauth
 
                     <!-- Right Side Of Navbar -->
