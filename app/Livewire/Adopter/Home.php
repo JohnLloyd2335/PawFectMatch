@@ -19,30 +19,37 @@ class Home extends Component
 
     public function render()
     {
-        $species = Species::pluck('name','id')->toArray();
-        $breeds = Breed::pluck('name','id')->toArray();
-        $petsQuery = Pet::where('name','like','%'.$this->search.'%');
-
-        if(!empty($this->species_id)){
-            if(!in_array($this->species_id,[0,"0"])){
-                $petsQuery->where('species_id',$this->species_id);
-            }
-           
+        $species = Species::pluck('name', 'id')->toArray();
+        $species = Species::pluck('name', 'id')->toArray();
+        $breeds = Breed::pluck('name', 'id')->toArray();
+        
+        $petsQuery = Pet::with('adoptions');
+        
+        if (!empty($this->search)) {
+            $petsQuery->where('name', 'like', '%' . $this->search . '%');
         }
-
-        if(!empty($this->breed_id)){
-            if(!in_array($this->breed_id,[0,"0"])){
-                $petsQuery->where('breed_id',$this->breed_id);
-            }
-           
+        
+        if (!empty($this->species_id) && !in_array($this->species_id, [0, "0"])) {
+            $petsQuery->where('species_id', $this->species_id);
         }
+        
+        if (!empty($this->breed_id) && !in_array($this->breed_id, [0, "0"])) {
+            $petsQuery->where('breed_id', $this->breed_id);
+        }
+        
+        $petsQuery->whereDoesntHave('adoptions', function ($query) {
+            $query->where('status', 'Approved');
+        });
+        
         $pets = $petsQuery->paginate(8);
-
-        return view('livewire.adopter.home',[
-            'pets' =>  $pets,
+        
+        return view('livewire.adopter.home', [
+            'pets' => $pets,
             'species' => $species,
-            'breeds' => $breeds
+            'breeds' => $breeds,
         ]);
+        
+
     }
 
     public function filterPets()

@@ -36,12 +36,10 @@ class Pet extends Model
         return $this->hasMany(MedicalHistory::class);
     }
 
-    public function bookmarks() : HasMany 
-    {
-        return $this->hasMany(Bookmark::class);
-    }
 
     public function age(){
         return Carbon::parse($this->attributes['dob'])->age;
     }
+
+    
 }

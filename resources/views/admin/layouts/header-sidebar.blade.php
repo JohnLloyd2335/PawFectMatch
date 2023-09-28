@@ -114,7 +114,7 @@
                 ])
                 ? 'active'
                 : '' }}">
-                <a class="nav-link" href="{{ route('admin.pet.medical_history.index') }}"> 
+                <a class="nav-link " href="{{ route('admin.pet.medical_history.index') }}"> 
                     <i class="fas fa-notes-medical"></i>
                     <span>Medical History</span>
                 </a>

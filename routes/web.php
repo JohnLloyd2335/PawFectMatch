@@ -38,7 +38,9 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('pet/{pet}/request_adoption', [AdoptionsController::class,'create'])->name('adopters.adoptions.create');
         Route::post('pet/{pet}/request_adoption/store',[AdoptionsController::class,'store'])->name('adopters.adoptions.store');
 
-       
+        Route::get('adoptions', [AdoptionsController::class,'index'])->name('adopters.adoptions.index');
+        Route::put('adoptions/{adoption}/adoptions', [AdoptionsController::class,'update'])->name('adopters.adoptions.update');
+
     });
 
     Route::group(['prefix' => 'admin','middleware' => 'admin'], function(){

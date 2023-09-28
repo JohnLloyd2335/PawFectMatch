@@ -24,9 +24,4 @@ class Adopter extends Model
     {   
         return $this->hasMany(Adoption::class);
     }
-
-    public function bookmarks() : HasMany
-    {
-        return $this->hasMany(Bookmark::class);
-    }
 }

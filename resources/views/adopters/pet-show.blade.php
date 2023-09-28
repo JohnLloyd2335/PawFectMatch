@@ -5,7 +5,7 @@
         <div class="card shadow-lg px-4 py-3">
             <div class="row d-flex flex-column">
                 <div class="col-md-12 d-flex align-items-center justify-content-end">
-                    <a href="{{ route('home') }}" class="btn btn-base"><i class="fas fa-arrow-left fa-2x"></i></a>
+                    <a href="{{ url()->previous() }}" class="btn btn-base"><i class="fas fa-arrow-left fa-2x"></i></a>
                 </div>
             </div>
 
